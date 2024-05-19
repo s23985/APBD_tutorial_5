@@ -3,11 +3,11 @@ using APBD_tutorial_5.Repositories;
 
 namespace APBD_tutorial_5.Services;
 
-public class AnimalService : IAnimalService
+public class AnimalsService : IAnimalsService
 {
-    private IAnimalRepository _repository;
+    private IAnimalsRepository _repository;
 
-    public AnimalService(IAnimalRepository repository)
+    public AnimalsService(IAnimalsRepository repository)
     {
         _repository = repository;
     }
@@ -17,18 +17,23 @@ public class AnimalService : IAnimalService
         return _repository.GetAnimals();
     }
 
+    public Animal? GetAnimal(int idAnimal)
+    {
+        return _repository.GetAnimal(idAnimal);
+    }
+
     public int CreateAnimal(Animal animal)
     {
-        throw new NotImplementedException();
+        return _repository.CreateAnimal(animal);
     }
 
     public int UpdateAnimal(Animal animal)
     {
-        throw new NotImplementedException();
+        return _repository.UpdateAnimal(animal);
     }
 
     public int DeleteAnimal(int idAnimal)
     {
-        throw new NotImplementedException();
+        return _repository.DeleteAnimal(idAnimal);
     }
 }
